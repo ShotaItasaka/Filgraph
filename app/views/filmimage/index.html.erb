@@ -1,8 +1,9 @@
 <% @filmimages.each do |post_image| %>
   <div>
     <%= image_tag post_image.get_image %>
-    <p><%= image_tag 'sample-author1.jpg' %></p>
+    <p>ユーザーアイコン：<%= image_tag post_image.user.get_profile_image(100,100) %></p>
     <p>キャプション：<%= post_image.caption %></p>
     <p>ユーザーネーム：<%= post_image.user.name %></p>
+    <p><%= link_to "#{post_image.post_comments.count} コメント", filmimage_path(filmimage.id) %></p>
   </div>
 <% end %>

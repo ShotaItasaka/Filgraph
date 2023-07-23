@@ -16,6 +16,7 @@ class FilmimageController < ApplicationController
 
   def show
     @filmimage = Filmimage.find(params[:id])
+    @post_comment = PostComment.ne
   end
 
   def destroy
