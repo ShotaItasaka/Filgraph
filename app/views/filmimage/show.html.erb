@@ -19,6 +19,20 @@
       <%= link_to "削除", filmimage_post_comment_path(post_comment.post_image, post_comment), method: :delete %>
     <% end %>
   <% end %>
+
+<% if @filmimage.favorited_by?(current_user) %>
+    <p>
+      <%= link_to filmimage_favorites_path(@filmimage), method: :delete do %>
+        ♥<%= @filmimage.favorites.count %> いいね
+      <% end %>
+    </p>
+    <% else %>
+    <p>
+      <%= link_to filmimage_favorites_path(@filmimage), method: :post do %>
+        ♡<%= @filmimage.favorites.count %> いいね
+      <% end %>
+    </p>
+  <% end %>
 </div>
 <div>
   <%= form_with model: [@post_image, @post_comment] do |f| %>
