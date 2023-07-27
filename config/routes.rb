@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/show'
-  get 'users/edit'
   devise_for :users
   root to: "homes#top"
   resources :filmimage, only: [:new, :create, :index, :show, :destroy] do

@@ -11,7 +11,7 @@ class FilmimageController < ApplicationController
   end
   
   def index
-    @filmimage = Filmimages.all
+    @filmimage = Filmimage.all
   end
 
   def show
