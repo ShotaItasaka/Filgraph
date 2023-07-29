@@ -1,25 +1,23 @@
-<footer>
+<footer class="fixed-bottom">
  <div class='container mt-5'>
   <div class='row'>
-   <div class='mx-auto'>
-    <li>
-     <%= link_to filmimage_index_path, class: 'nav-link text-light' do %> 
+    <div>
+     <%= link_to filmimage_index_path, class: 'nav-link text-dark' do %>
       <i class="fas fa-home"></i>
      <% end %>
-    </li>
-  
-    <li>
-     <%= link_to new_filmimage_path, class: 'nav-link text-light' do %>
+    </div>
+
+    <div>
+     <%= link_to new_filmimage_path, class: 'nav-link text-dark' do %>
       <i class="fas fa-plus-square"></i>
      <% end %>
-    </li>
-  
-    <li>
-     <%= link_to edit_user_path(current_user), class: 'nav-link text-light' do %>
+    </div>
+
+    <div>
+     <%= link_to user_path(current_user.id), class: 'nav-link text-dark' do %>
       <i class="fas fa-user"></i>
      <% end %>
-    </li>
-   </div>
+    </div>
   </div>
  </div>
 </footer>

@@ -1,8 +1,14 @@
-<h1>新規投稿</h1>
-<%= form_with model: @filmimage do |f| %>
-  <h4>画像</h4>
-  <%= f.file_field :image, accept: "image/*" %>
-  <h4>キャプション</h4>
-  <%= f.text_area :caption %>
-  <%= f.submit '投稿' %>
-<% end %>
+<div class="container">
+  <div class="row no-gutters">
+   <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto text-center rounded px-0 my-5">
+    <h2 class="text-dark py-4 mb-0">新規投稿</h2>
+    <%= form_with model: @filmimage, url: filmimage_index_path, method: :post do |f| %>
+      <h4>画像</h4>
+      <%= f.file_field :image, accept: "image/*" %>
+      <h4>キャプション</h4>
+      <%= f.text_area :caption %>
+      <%= f.submit '投稿', class:"btn btn-lg btn-block btn-info mt-5" %>
+    <% end %>
+   </div>
+  </div>
+</div>

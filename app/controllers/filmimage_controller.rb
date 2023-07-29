@@ -4,19 +4,35 @@ class FilmimageController < ApplicationController
   end
 
   def create
-    @filmimage = Filmimage.new(filmimage.params)
+    @filmimage = Filmimage.new(filmimage_params)
     @filmimage.user_id = current_user.id
-    @filmimage.save
-    redirect_to filmimage_path
+    if @filmimage.save
+      redirect_to filmimage_index_path
+    else
+      @filmimages = Filmimage.all
+      @user = current_user
+      render :index
+    end
   end
   
   def index
-    @filmimage = Filmimage.all
+    @filmimages = Filmimage.all
+    @filmimage = Filmimage.new
+    @user = current_user
   end
 
   def show
     @filmimage = Filmimage.find(params[:id])
-    @post_comment = PostComment.ne
+    @post_comment = PostComment.new
+  end
+
+  def update
+    @filmimage = Filmimage.find(params[:id])
+    if @filmimage.update(filmimage_params)
+      redirect_to filmimage_path(@filmimage.id)
+    else
+      render :edit
+    end
   end
 
   def destroy

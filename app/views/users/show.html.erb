@@ -1,14 +1,17 @@
-<div>
-  <h3><%= @user.name %></h3>
-  <%= image_tag @user.get_profile_image(100,100) %>
-</div>
-
-<%= @filmimage.each do |filmimage| %>
-<div>
-  <%= link_to filmimage_path(post_image.id) do %>
-    <%= image_tag filmimage.get_image %>
-  <% end %>
-  <p>ユーザーアイコン：<%= image_tag filmimage.user.get_profile_image(100,100) %></p>
-  <p>キャプション：<%= filmimage.caption %></p>
-  <p>ユーザーネーム：<%= filmimage.user.name %></p>
+<div class="container">
+  <div class="row no-gutters">
+   <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto text-center rounded px-0 my-5">
+    <h2 class="text-dark py-4 mb-0">マイページ</h2>
+      <%= image_tag @user.get_profile_image(100,100) %>
+      <table class="table">
+       <tr></tr>
+       <tr>
+        <th><%= @user.name %></th>
+       </tr>
+       <tr>
+        <th><%= @user.introduction %></th>
+       </tr>
+      </table>
+   </div>
+  </div>
 </div>

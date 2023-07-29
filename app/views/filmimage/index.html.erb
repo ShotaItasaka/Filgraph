@@ -1,14 +1,15 @@
 <body>
+ <div class='container mt-5'>
   <h3>新着投稿</h3>
-    <% @filmimage.each do |post_image| %>
-      <div>
-        <%= image_tag post_image.get_image %>
-        <p>ユーザーアイコン：<%= image_tag post_image.user.get_profile_image(100,100) %></p>
-        <p>キャプション：<%= post_image.caption %></p>
-        <p>ユーザーネーム：<%= post_image.user.name %></p>
-        <p><%= link_to "#{post_image.post_comments.count} コメント", filmimage_path(filmimage.id) %></p>
+   <div class='row'>
+    <% @filmimages.each do |f| %>
+      <div class='col-md-3'>
+        <p><%= image_tag @user.get_profile_image(50,50) %>ユーザーネーム<%= f.user.name %></p>
+        <%= image_tag f.get_image %>
+        <p>キャプション：<%= f.caption %></p>
       </div>
     <% end %>
+    <%= render 'layouts/footer' %>
+   </div>
+ </div>
 </body>
-
-<%= render 'layouts/footer' %>

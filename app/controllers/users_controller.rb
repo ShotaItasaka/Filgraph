@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @film_image = @user.post_images
+    @filmimage = @user.filmimage
   end
 
   def edit
