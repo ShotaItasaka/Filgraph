@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+.image{
+  position:relative;
+  overflow:hidden;
+  padding-bottom:100%;
+}
+.image img{
+  position:absolute;
+}

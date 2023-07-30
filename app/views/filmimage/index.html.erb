@@ -3,10 +3,16 @@
   <h3>新着投稿</h3>
    <div class='row'>
     <% @filmimages.each do |f| %>
-      <div class='col-md-3'>
-        <p><%= image_tag @user.get_profile_image(50,50) %>ユーザーネーム<%= f.user.name %></p>
-        <%= image_tag f.get_image %>
-        <p>キャプション：<%= f.caption %></p>
+      <div class='col-md-4'>
+       <div class="card" style="width: 18rem;">
+        <p><%= image_tag @user.get_profile_image(50,50) %><%= f.user.name %></p>
+         <div class="bd-placeholder-img card-img-top h-100">
+          <%= image_tag f.get_image.current_user %>
+         </div>
+         <div class="card-body">
+          <p><%= f.caption %></p>
+         </div>
+       </div>
       </div>
     <% end %>
     <%= render 'layouts/footer' %>

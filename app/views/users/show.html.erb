@@ -1,17 +1,37 @@
-<div class="container">
-  <div class="row no-gutters">
-   <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto text-center rounded px-0 my-5">
-    <h2 class="text-dark py-4 mb-0">マイページ</h2>
-      <%= image_tag @user.get_profile_image(100,100) %>
-      <table class="table">
-       <tr></tr>
-       <tr>
-        <th><%= @user.name %></th>
-       </tr>
-       <tr>
-        <th><%= @user.introduction %></th>
-       </tr>
-      </table>
+<body>
+ <div class="container border-bottom border-dark">
+   <div class="row">
+    <div colss="col-4">
+     <%= image_tag @user.get_profile_image(100,100) %>
+      <div class="center-block">
+       <%= link_to edit_user_path(@user), class: "btn btn-outline-secondary btn-block" do %>
+        <i class="fas fa-user-cog"></i>
+       <% end %>
+      </div>
+    </div>
+    <div class="col-4">
+     <table class="table-borderless">
+      <tr></tr>
+      <tr>
+       <th><%= @user.name %></th>
+      </tr>
+      <tr>
+       <th><%= @user.introduction %></th>
+      </tr>
+     </table>
+    </div>
    </div>
+ </div>
+ 
+ <div class='container mt-5'>
+  <div class='row'>
+   <% @filmimages.each do |f| %>
+    <div class='col-4'>
+     <%= image_tag f.get_image %>
+     <p><%= f.caption %></p>
+    </div>
+   <% end %>
   </div>
-</div>
+ </div>
+  <%= render 'layouts/footer' %>
+</body>
