@@ -7,7 +7,7 @@
          <p>メールアドレスとパスワードを入力してください</p>
         </div>
 
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= form_with model: @user, url: user_session_path do |f| %>
            <div class="input-group mb-3">
             <div class="input-group-prepend">
              <span class="input-group-text" aria-hidden="true"><i class="fas fa-envelope"></i></span>
