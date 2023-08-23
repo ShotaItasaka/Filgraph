@@ -77,14 +77,6 @@ ActiveRecord::Schema.define(version: 2023_07_30_042027) do
     t.datetime "remember_created_at"
     t.string "name"
     t.text "introduction"
-    t.string "last_name", null: false
-    t.string "first_name", null: false
-    t.string "last_name_kana", null: false
-    t.string "first_name_kana", null: false
-    t.string "postcode", null: false
-    t.string "address", null: false
-    t.string "telephone_number", null: false
-    t.boolean "is_active", default: true, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image"
